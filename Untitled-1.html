@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .row {
+            margin-bottom: 15px;
+        }
+        .styled-input {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .styled-input input, .styled-input textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .styled-input label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #999;
+            transition: 0.2s ease all;
+        }
+        .styled-input input:focus + label, .styled-input input:not(:placeholder-shown) + label, 
+        .styled-input textarea:focus + label, .styled-input textarea:not(:placeholder-shown) + label {
+            top: -20px;
+            left: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .btn-lrg {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-lrg:hover {
+            background-color: #0056b3;
+        }
+        .wide {
+            width: 100%;
+        }
+        .input-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col-xs-12, .col-md-6, .col-sm-12 {
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+        .col-xs-12 {
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .col-md-6 {
+                width: 50%;
+            }
+        }
+        @media (max-width: 767px) {
+            .col-sm-12 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="row">
+            <h4 style="text-align:center">We'd love to hear from you!</h4>
+        </div>
+        <form action="/submit-form" method="post">
+            <div class="row input-container">
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <input type="text" id="name" name="name" required />
+                        <label for="name">Name</label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+                        <input type="email" id="email" name="email" required />
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float:right;">
+                        <input type="tel" id="phone" name="phone" required />
+                        <label for="phone">Phone Number</label>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <button type="submit" class="btn-lrg submit-btn">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
